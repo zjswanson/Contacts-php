@@ -10,14 +10,14 @@ _This is a simple application designed to demonstrate several techniques in php 
 
 ## Application Behaviors
 ```
-Behavior: User enters data into contact forms and clicks submit, app navigates to new contact page and displays details of new contact.
+Behavior: User enters data into contact forms and clicks submit, app navigates to Add Contact page and displays details of new contact.
 Sample Input: name: Zach, phone: 555-555-5000, address: here
-Sample Output: Contact page shows entry with with: Zach, 555-555-5000, here
+Sample Output: Add Contact page shows entry with with: Zach, 555-555-5000, here
 ```
 ```
-Behavior: User enters data into contact forms on contact page, page displays details of new contact.
+Behavior: User enters data into contact forms on Add Contact page, page displays details of new contact.
 Sample Input: name: Sam, phone: 555-555-5001, address: there
-Sample Output: Contact page shows entry with with: Sam, 555-555-5001, there
+Sample Output: Add Contact page shows entry with with: Sam, 555-555-5001, address: there
 ```
 ```
 Behavior: user clicks home, page displays list of all contacts entered.
@@ -25,16 +25,40 @@ Sample Input: click "back to contact list"
 Sample Output: navigate to root directory, display list of all previously entered contacts.
 ```
 ```
-Behavior: user clicks delete contact list, page navigates to delete confirmation page.
-Sample Input: click "delete contact list"
+Behavior: user clicks Edit contact list, page navigates to edit confirmation page.
+Sample Input: click "edit contact list"
+Sample Output: navigate to edit confirmation page.
+```
+```
+Behavior: user clicks Add Contacts, page navigates to Add Contacts page.
+Sample Input: click "Add Contacts"
+Sample Output: navigate to Add Contacts page.
+```
+```
+Behavior: user clicks Delete All Contacts, page navigates to delete confirmation page.
+Sample Input: click "Delete All Contacts"
 Sample Output: navigate to delete confirmation page.
 ```
 ```
-Behavior: user clicks back to home on delete confirmation page, page returns to root and displays empty contact list.
-Sample Input: click "back to contact list"
+Behavior: user clicks Delete button below a contact, contact is deleted from list.
+Sample Input: click delete below "name: Sam, phone: 555-555-5001, address: there".
+Sample Output: "name: Sam, phone: 555-555-5001, address: there" is deleted from list.
+```
+```
+Behavior: user clicks Edit button below a contact, page navigates to Edit Contact page with current contact details filled into form.
+Sample Input: click edit below "name: Sam, phone: 555-555-5001, address: there".
+Sample Output: "name: Sam, phone: 555-555-5001, address: there" is displayed in forms on Edit Contact page
+```
+```
+Behavior: User enters data into contact forms on Edit Contact page, page navigates to Add Contact page and displays details of new contact.
+Sample Input: name: Ed, phone: 555-555-5002, address: where?
+Sample Output: Add Contact page shows entry with with: Ed, 555-555-5002, address: where?
+```
+```
+Behavior: user clicks "back to home" on Delete Confirmation page, page returns to root and displays empty contact list.
+Sample Input: click "back to home"
 Sample Output: navigate to root directory, display prompt to enter contacts.
 ```
-
 
 ## Setup/Installation Requirements
 

@@ -24,6 +24,28 @@
         return $app['twig']->render('create_contact.html.twig', array('contact' => $newContact));
     });
 
+    $app->get("/create", function() use ($app) {
+        return $app['twig']->render('create_contact.html.twig');
+    });
+
+    $app->get("/edit", function() use ($app) {
+        return $app['twig']->render('edit.html.twig', array('contacts' => Contact::getAll()));
+    });
+
+    $app->post("/delete_one", function() use ($app) {
+        $index = $_POST['index'];
+        Contact::deleteOne($index);
+        return $app['twig']->render('edit.html.twig', array('contacts' => Contact::getAll()));
+    });
+
+    $app->post("/edit_one", function() use ($app) {
+        $index = $_POST['index'];
+        $editContact=Contact::getAll()[$index];
+        var_dump($editContact);
+
+        return $app['twig']->render('create_contact.html.twig', array('contact' => $editContact));
+    });
+
     $app->get("/delete", function() use ($app) {
         Contact::deleteAll();
         return $app['twig']->render('delete.html.twig');

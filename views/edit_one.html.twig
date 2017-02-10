@@ -14,22 +14,22 @@
                 <form action='/create' method='post'>
                     <div class='form-group'>
                         <label for='contact-name'>Enter Contact Name:</label>
-                        <input type='text' name='contact-name' class='form-control'>
+                        <input type='text' name='contact-name' class='form-control' placeholder={{contact.getContactName}}>
                     </div>
                     <div class='form-group'>
                         <label for='phone'>Enter Contact Phone Number:</label>
-                        <input type='text' name='phone' class='form-control'>
+                        <input type='text' name='phone' class='form-control' placeholder={{contact.getPhone}}>
                     </div>
                     <div class='form-group'>
                         <label for='address'>Enter Contact Address:</label>
-                        <input type='text' name='address' class='form-control'>
+                        <input type='text' name='address' class='form-control' placeholder={{contact.getAddress}}>
                     </div>
                     <button type='submit' class='btn'>Create Contact</button>
                 </form>
             </div>
             <div class='col-md-7'>
                     {% if contact is not empty%}
-                    <h2>Contact Created:</h2>
+                    <h2>Contact to Edit:</h2>
                         <ul>
                             <li> {{contact.getContactName}} </li>
                             <ul>
@@ -38,8 +38,8 @@
                             </ul>
                         </ul>
                     {% else %}
-                        <h2>Enter a new contact:</h2>
-                        <p>Enter your contact info into the forms at the left.  Click create and the new contact will display here.</p>
+                        <h2>How'd you get here?:</h2>
+                        <p>You must have been snooping around the site.  Use the nav buttons to go back, and come here through the buttons on the edit menu.</p>
                     {% endif %}
                 <a href='/'>
                     <button class='btn'>Back to Contact List</button>

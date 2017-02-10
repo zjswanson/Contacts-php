@@ -10,22 +10,16 @@
         </div>
         <div class='row'>
             <div class='col-md-5'>
-                <h2>Create a new Contact:</h2>
-                <form action='/create' method='post'>
-                    <div class='form-group'>
-                        <label for='contact-name'>Enter Contact Name:</label>
-                        <input type='text' name='contact-name' class='form-control'>
-                    </div>
-                    <div class='form-group'>
-                        <label for='phone'>Enter Contact Phone Number:</label>
-                        <input type='text' name='phone' class='form-control'>
-                    </div>
-                    <div class='form-group'>
-                        <label for='address'>Enter Contact Address:</label>
-                        <input type='text' name='address' class='form-control'>
-                    </div>
-                    <button type='submit' class='btn btn-info'>Create Contact</button>
-                </form>
+                <h2>Navigation</h2>
+                <a href='/'>
+                    <button class='btn'>Back to Home</button>
+                </a>
+                <a href='/create'>
+                    <button class='btn'>Add Contacts</button>
+                </a>
+                <a href='/delete'>
+                    <button class='btn'>Delete All Contacts</button>
+                </a>
             </div>
             <div class='col-md-7'>
                 <h2>Your Contacts:</h2>
@@ -37,14 +31,16 @@
                             <li> {{contact.getPhone}} </li>
                             <li> {{contact.getAddress}} </li>
                         </ul>
+                        <form>
+                            <button value='{{ loop.index0 }}' formaction="/delete_one" class='btn btn-danger' formmethod='post' name='index'>Delete</button>
+                            <button value='{{ loop.index0 }}' formaction="/edit_one" class='btn btn-danger' formmethod='post' name='index'>Edit</button>
+                        </form>
                         {% endfor %}
                     {% else %}
+                        <h2>Contacts Empty!</h2>
                         <p>You don't have any contacts entered yet!  Use the form at the left to add some to the list.</p>
                     {% endif %}
                 </ul>
-                <a href='/edit'>
-                    <button class='btn btn-warning'>Edit Contact List</button>
-                </a>
             </div>
         </div>
     </div>

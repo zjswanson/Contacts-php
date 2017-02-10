@@ -2,11 +2,11 @@
 
 #### _Application to demonstrate routing and templating in php.  Created February 2017._
 
-#### By _**Zach Swanson*_
+#### By _**Zach Swanson**_
 
 ## Description
 
-_ This is a simple application designed to demonstrate several techniques in php using the Silex and framework and Twig templating engine.  The application allows users to input contacts into a list, and can save into the the session superglobal and navigate between several urls to display or edit._
+_This is a simple application designed to demonstrate several techniques in php using the Silex and framework and Twig templating engine.  The application allows users to input contacts into a list, and can save into the the session superglobal and navigate between several urls to display or edit._
 
 ## Application Behaviors
 ```
@@ -17,7 +17,7 @@ Sample Output: Contact page shows entry with with: Zach, 555-555-5000, here
 ```
 Behavior: User enters data into contact forms on contact page, page displays details of new contact.
 Sample Input: name: Sam, phone: 555-555-5001, address: there
-Sample Output: Contact page shos entry with with: Sam, 555-555-5001, there
+Sample Output: Contact page shows entry with with: Sam, 555-555-5001, there
 ```
 ```
 Behavior: user clicks home, page displays list of all contacts entered.

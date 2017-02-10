@@ -41,9 +41,8 @@
     $app->post("/edit_one", function() use ($app) {
         $index = $_POST['index'];
         $editContact=Contact::getAll()[$index];
-        var_dump($editContact);
-
-        return $app['twig']->render('create_contact.html.twig', array('contact' => $editContact));
+        Contact::deleteOne($index);
+        return $app['twig']->render('edit_one.html.twig', array('contact' => $editContact));
     });
 
     $app->get("/delete", function() use ($app) {

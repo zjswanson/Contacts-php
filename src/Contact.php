@@ -2,9 +2,9 @@
 
     class Contact
     {
-        private contactName;
-        private phone;
-        private address;
+        private $contactName;
+        private $phone;
+        private $address;
 
         function __construct($contactName,$phone,$address)
         {
@@ -19,7 +19,7 @@
         }
         function setContactName($contactName)
         {
-            $this->contactName = $contactName
+            $this->contactName = $contactName;
         }
 
         function getPhone()
@@ -28,7 +28,7 @@
         }
         function setPhone($phone)
         {
-            $this->phone = $phone
+            $this->phone = $phone;
         }
 
         function getAddress()
@@ -37,7 +37,7 @@
         }
         function setAddress($address)
         {
-            $this->address = $address
+            $this->address = $address;
         }
 
         function saveContact()
